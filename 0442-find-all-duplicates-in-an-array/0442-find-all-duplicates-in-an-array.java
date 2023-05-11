@@ -10,7 +10,7 @@ Iterate and return all the numbers not at their correct positions.
 
 Algo : 
 
-Run a for loop from 0 to last index
+Run a while loop from 0 to last index
 
 If arr[expectedIndex] == currValue => then move to next index
 Else do a swap and stay at the same index
