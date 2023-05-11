@@ -42,10 +42,8 @@ Algo :
 
 Run a while loop from 0 to last index
 
-If arr[expectedIndex] == currValue => then move to next index
-Else do a swap and stay at the same index
-
-Ensure that expectedIndex does not cross array boundaries, so before comparison do a boundary check
+If (expectedIndex in bounds && arr[expectedIndex] != currValue) => do a swap and stay at the same index
+Else move to next index
 
 TC : O(N)
 SC : O(1)
