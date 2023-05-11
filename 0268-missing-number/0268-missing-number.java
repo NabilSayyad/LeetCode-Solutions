@@ -38,6 +38,15 @@ expected = [0,1,2,3] i.e. number 0 expected at index 0
 
 Pls handle the case where num is 3 and our array doesn't have index 3, so for such cases, skip this index.
 
+Algo : 
+
+Run a for loop from 0 to last index
+
+If arr[expectedIndex] == currValue => then move to next index
+Else do a swap and stay at the same index
+
+Ensure that expectedIndex does not cross array boundaries, so before comparison do a boundary check
+
 TC : O(N)
 SC : O(1)
 
