@@ -40,7 +40,7 @@ Pls handle the case where num is 3 and our array doesn't have index 3, so for su
 
 Algo : 
 
-Run a for loop from 0 to last index
+Run a while loop from 0 to last index
 
 If arr[expectedIndex] == currValue => then move to next index
 Else do a swap and stay at the same index
