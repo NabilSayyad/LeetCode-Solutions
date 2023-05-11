@@ -26,7 +26,7 @@ SC : O(1)
 
 Algo : 
 
-Run a for loop from 0 to last index
+Run a while loop from 0 to last index
 
 If arr[expectedIndex] == currValue => then move to next index
 Else do a swap and stay at the same index
