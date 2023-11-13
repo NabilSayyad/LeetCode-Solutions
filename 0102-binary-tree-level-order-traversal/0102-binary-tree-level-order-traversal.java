@@ -22,11 +22,11 @@ class Solution {
         }
         queue.add(root);
         while(!queue.isEmpty()){
-            List<Integer> ans = new ArrayList<>();
-            int size = queue.size();
-            while(size-- > 0){
+            List<Integer> currLevelList = new ArrayList<>();
+            int currLevelSize = queue.size();
+            while(currLevelSize-- > 0){
                 TreeNode node = queue.remove();
-                ans.add(node.val);
+                currLevelList.add(node.val);
                 if(node.left != null){
                     queue.add(node.left);
                 }
@@ -34,7 +34,7 @@ class Solution {
                     queue.add(node.right);
                 }
             }
-            levelOrderTraversal.add(ans);
+            levelOrderTraversal.add(currLevelList);
         }
         return levelOrderTraversal;
     }
