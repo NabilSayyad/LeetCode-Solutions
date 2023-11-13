@@ -21,6 +21,8 @@ class Node {
 };
 */
 
+/* Approach 1 : 
+
 class Solution {
     public Node connect(Node root) {
         if(root == null){
@@ -38,12 +40,6 @@ class Solution {
                 else{
                     curr.next = queue.peek();
                 }
-                // if(!queue.isEmpty() && i != currLevelSize - 1){
-                //     curr.next = queue.peek();
-                // }
-                // else{
-                //     curr.next = null;
-                // }
                 if(curr.left != null){
                     queue.add(curr.left);
                 }
@@ -56,3 +52,50 @@ class Solution {
         return root;
     }
 }
+*/
+
+/*
+
+1 ptr : track the 1st node of each level -> leftmost
+1 ptr : traverse the level -> head
+
+*/
+
+class Solution {
+    public Node connect(Node root) {
+        if(root == null){
+            return root;
+        }
+        
+        // similar to adding root in queue
+        Node leftmost = root;
+        
+        // similar to checking if queue is empty
+        while(leftmost.left != null){
+            
+            // this ptr will traverse the level
+            Node head = leftmost;
+            
+            while(head != null){
+                // Establish connection 1
+                head.left.next = head.right;
+                
+                // Establish connection 2
+                if(head.next != null){
+                    head.right.next = head.next.left;
+                }
+                
+                // Progress along the list (nodes on the current level)
+                head = head.next;
+                
+            }
+            
+            // one level completed so go to next level 
+            leftmost = leftmost.left;
+            
+        }
+        
+        return root;
+    }
+}
+
