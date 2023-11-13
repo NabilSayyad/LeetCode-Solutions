@@ -6,7 +6,7 @@ Approach 1 :
 
 Collections.reverse(levelOrderTraversal);
 
-Approach : If we do not want to reverse it, then simply use add(index, value) and at every level, append the currLevelList at index 0
+Approach 2 : If we do not want to reverse it, then simply use add(index, value) and at every level, append the currLevelList at index 0
 
 */
 
