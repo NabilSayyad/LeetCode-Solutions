@@ -19,9 +19,11 @@ class Solution {
         queue.add(root);
         while(!queue.isEmpty()){
             int currLevelSize = queue.size();
-            TreeNode curr = null;
-            while(currLevelSize-- > 0){
-                curr = queue.remove();
+            for(int i = 0; i < currLevelSize; i++){
+                TreeNode curr = queue.remove();
+                if(i == currLevelSize - 1){
+                    ans.add(curr.val);
+                }
                 if(curr.left != null){
                     queue.add(curr.left);
                 }
@@ -29,7 +31,6 @@ class Solution {
                     queue.add(curr.right);
                 }
             }
-            ans.add(curr.val);
         }
         return ans;
     }
