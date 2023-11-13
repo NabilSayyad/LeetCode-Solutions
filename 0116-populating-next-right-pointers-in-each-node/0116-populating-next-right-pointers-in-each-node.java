@@ -74,19 +74,19 @@ class Solution {
         while(leftmost.left != null){
             
             // this ptr will traverse the level
-            Node head = leftmost;
+            Node curr = leftmost;
             
-            while(head != null){
+            while(curr != null){
                 // Establish connection 1
-                head.left.next = head.right;
+                curr.left.next = curr.right;
                 
                 // Establish connection 2
-                if(head.next != null){
-                    head.right.next = head.next.left;
+                if(curr.next != null){
+                    curr.right.next = curr.next.left;
                 }
                 
                 // Progress along the list (nodes on the current level)
-                head = head.next;
+                curr = curr.next;
                 
             }
             
