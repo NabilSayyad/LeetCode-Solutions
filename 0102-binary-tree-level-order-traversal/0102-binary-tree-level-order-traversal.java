@@ -34,7 +34,7 @@ class Solution {
         while(!queue.isEmpty()){
             List<Integer> currLevelList = new LinkedList<>();
             int currLevelSize = queue.size();
-            while(currLevelSize-- > 0){
+            for(int i = 0; i < currLevelSize; i++){
                 TreeNode curr = queue.remove();
                 currLevelList.add(curr.val);
                 if(curr.left != null){
