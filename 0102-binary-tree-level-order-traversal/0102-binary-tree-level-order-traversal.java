@@ -36,13 +36,13 @@ class Solution {
             int currLevelSize = queue.size();
             while(currLevelSize-- > 0){
                 TreeNode curr = queue.remove();
+                currLevelList.add(curr.val);
                 if(curr.left != null){
                     queue.add(curr.left);
                 }
                 if(curr.right != null){
                     queue.add(curr.right);
                 }
-                currLevelList.add(curr.val);
             }
             levelOrderTraversal.add(currLevelList);
         }
