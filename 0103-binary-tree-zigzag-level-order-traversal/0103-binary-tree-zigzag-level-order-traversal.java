@@ -29,26 +29,26 @@ class Solution {
         }
         queue.add(root);
         while(!queue.isEmpty()){
-            List<Integer> currLevelList = new ArrayList<>();
+            List<Integer> currLevelList = new LinkedList<>();
             int currLevelSize = queue.size();
-            for(int i = 0; i < currLevelSize; i++){
+            while(currLevelSize-- > 0){
                 TreeNode curr = queue.remove();
-                currLevelList.add(curr.val);
                 if(curr.left != null){
                     queue.add(curr.left);
                 }
                 if(curr.right != null){
                     queue.add(curr.right);
                 }
+                currLevelList.add(curr.val);
             }
-            if(level%2 == 0){
-                levelOrderTraversal.add(currLevelList);
-            }
-            else{
+            level++;
+            if(level % 2 == 0){
                 Collections.reverse(currLevelList);
                 levelOrderTraversal.add(currLevelList);
             }
-            level++;
+            else{
+                levelOrderTraversal.add(currLevelList);
+            }
         }
         return levelOrderTraversal;
     }
