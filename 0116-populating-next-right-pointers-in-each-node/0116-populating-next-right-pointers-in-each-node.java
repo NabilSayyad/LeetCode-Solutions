@@ -32,12 +32,18 @@ class Solution {
             int currLevelSize = queue.size();
             for(int i = 0; i < currLevelSize; i++){
                 Node curr = queue.remove();
-                if(!queue.isEmpty() && i != currLevelSize - 1){
-                    curr.next = queue.peek();
-                }
-                else{
+                if(i == currLevelSize - 1){
                     curr.next = null;
                 }
+                else{
+                    curr.next = queue.peek();
+                }
+                // if(!queue.isEmpty() && i != currLevelSize - 1){
+                //     curr.next = queue.peek();
+                // }
+                // else{
+                //     curr.next = null;
+                // }
                 if(curr.left != null){
                     queue.add(curr.left);
                 }
